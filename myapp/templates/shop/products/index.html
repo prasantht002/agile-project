@@ -2,19 +2,94 @@
 
 {% block content %}
 <style>
-    .old-price{
-    color:red;
-    font-weight: bold;
+/* Updated styles for product cards with premium matte finish */
+.product-card {
+  height: 100%;
 }
-.new-price{
-    font-weight: bold;
-    background-color:green;
-    color: white;
-    border-radius: 0.3rem;
+
+.card {
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color:azure;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect for a refined appearance */
 }
-.card{
-    background-color: oldlace;
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover for a premium glossy effect */
 }
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-bottom: 1px solid #333; /* Slightly lighter border for separation */
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1rem;
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+  color: #fff; /* White color for the text to contrast the premium matte background */
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.old-price {
+  color: #FF5733;
+  font-weight: bold;
+  text-decoration: line-through; /* Strikeout effect for the old price */
+}
+
+.new-price {
+  color: #27AE60;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.new-price:hover {
+  animation: colorChange 1s infinite alternate; /* Animate color change on hover */
+}
+
+@keyframes colorChange {
+  0% {
+    color: #27AE60;
+  }
+  100% {
+    color: #FF5733;
+  }
+}
+
 </style>
 <section class="bg-light py-4 my-5" style="min-height:600px;">
     <div class="container">
